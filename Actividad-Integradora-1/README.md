@@ -16,7 +16,7 @@ Aplicar correctamente la estructura HTML, el uso de etiquetas semánticas y la o
 ## Archivos del proyecto
 - index.html
 - style.css
-- carpeta imagenes
+- carpeta de imagenes
 
 ## Enlace del repositorio en GitHub
 [Pegar aquí el enlace del repositorio]
@@ -28,4 +28,4 @@ Aplicar correctamente la estructura HTML, el uso de etiquetas semánticas y la o
 - Avance final: revisión del proyecto y preparación para entrega
 
 ## Autor
-Kevin Espinoza
+Kevin Minga Espinoza
