@@ -23,6 +23,17 @@ section {
   margin-bottom: 20px;
 }
 
+img {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+input,
+textarea,
+button {
+  margin-top: 5px;
+}
+
 footer {
   background-color: #dbeafe;
   padding: 10px;
