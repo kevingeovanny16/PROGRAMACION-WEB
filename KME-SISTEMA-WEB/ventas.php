@@ -1,3 +1,8 @@
+<?php
+require_once "auth.php";
+require_login();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -12,11 +17,15 @@
             <h1>KME Inventario y Ventas</h1>
             <p class="subtitle">Módulo de ventas</p>
         </div>
-        <nav>
-            <a href="index.php">Inicio</a>
-            <a href="productos.php">Productos</a>
-            <a href="ventas.php">Ventas</a>
-        </nav>
+       <nav class="nav-right">
+    <a href="index.php">Inicio</a>
+    <a href="productos.php">Productos</a>
+    <a href="ventas.php">Ventas</a>
+    <span class="user-badge">
+        Usuario: <?php echo htmlspecialchars($_SESSION["nombre_usuario"] ?? "admin"); ?>
+    </span>
+    <a href="logout.php" class="logout-link">Salir</a>
+</nav>
     </header>
 
     <main class="container">
