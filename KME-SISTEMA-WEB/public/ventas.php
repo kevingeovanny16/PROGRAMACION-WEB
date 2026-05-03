@@ -1,3 +1,8 @@
+<?php
+require_once "auth.php";
+require_login();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -12,11 +17,15 @@
             <h1>KME Inventario y Ventas</h1>
             <p class="subtitle">Módulo de ventas</p>
         </div>
-        <nav>
-            <a href="index.php">Inicio</a>
-            <a href="productos.php">Productos</a>
-            <a href="ventas.php">Ventas</a>
-        </nav>
+       <nav class="nav-right">
+    <a href="index.php">Inicio</a>
+    <a href="productos.php">Productos</a>
+    <a href="ventas.php">Ventas</a>
+    <span class="user-badge">
+        Usuario: <?php echo htmlspecialchars($_SESSION["nombre_usuario"] ?? "admin"); ?>
+    </span>
+    <a href="logout.php" class="logout-link">Salir</a>
+</nav>
     </header>
 
     <main class="container">
@@ -29,9 +38,24 @@
                     <select id="productoVenta"></select>
                 </div>
 
+                <div class="sale-preview">
+                    <div class="preview-box">
+                        <span>Precio unitario</span>
+                        <strong id="precioUnitarioVista">$0.00</strong>
+                    </div>
+                    <div class="preview-box">
+                        <span>Stock disponible</span>
+                        <strong id="stockDisponibleVista">0</strong>
+                    </div>
+                    <div class="preview-box">
+                        <span>Total estimado</span>
+                        <strong id="totalEstimadoVista">$0.00</strong>
+                    </div>
+                </div>
+
                 <div class="form-group">
                     <label for="cantidadVenta">Cantidad</label>
-                    <input type="number" id="cantidadVenta" placeholder="0">
+                    <input type="number" id="cantidadVenta" placeholder="0" min="1">
                 </div>
 
                 <div class="button-group">
@@ -48,6 +72,7 @@
                 <thead>
                     <tr>
                         <th>Producto</th>
+                        <th>Categoría</th>
                         <th>Cantidad</th>
                         <th>Precio unitario</th>
                         <th>Total</th>
